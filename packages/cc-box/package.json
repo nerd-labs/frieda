@@ -1,0 +1,16 @@
+{
+  "name": "cc-box",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node ../../build -t angular -c cc-box"
+  },
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "cc-button": "0.0.1"
+  },
+  "devDependencies": {
+    "cc-button": "0.0.1",
+    "cc-scss": "0.0.1"
+  }
+}

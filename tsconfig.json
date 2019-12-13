@@ -17,7 +17,27 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-button": [
+        "dist/ng-button"
+      ],
+      "ng-button/*": [
+        "dist/ng-button/*"
+      ],
+      "cc-button": [
+        "dist/cc-button"
+      ],
+      "cc-button/*": [
+        "dist/cc-button/*"
+      ],
+      "cc-box": [
+        "dist/cc-box"
+      ],
+      "cc-box/*": [
+        "dist/cc-box/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
