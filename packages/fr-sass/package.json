@@ -1,0 +1,16 @@
+{
+  "name": "fr-sass",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "rm -rf dist && mkdir dist",
+		"start": "echo 'test' && node ../../build -t style -c fr-sass"
+  },
+  "author": "Nerdlabs",
+	"license": "ISC",
+	"devDependencies": {
+		"fr-scss": "0.0.0"
+	}
+}

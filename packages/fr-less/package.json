@@ -1,0 +1,13 @@
+{
+  "name": "fr-less",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "rm -rf dist && mkdir dist",
+		"start": "echo 'test3' &&  node ../../build -t style -c fr-less"
+  },
+  "author": "Nerdlabs",
+	"license": "ISC"
+}

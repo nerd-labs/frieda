@@ -1,13 +1,16 @@
 {
-  "name": "scss",
+  "name": "fr-scss",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "rm -rf dist && mkdir dist",
-    "start": "node ../../build -t style -c scss"
+		"start": "echo 'test2' &&  node ../../build -t style -c fr-scss"
   },
   "author": "Nerdlabs",
-	"license": "ISC"
+	"license": "ISC",
+	"devDependencies": {
+		"fr-less": "0.0.0"
+	}
 }

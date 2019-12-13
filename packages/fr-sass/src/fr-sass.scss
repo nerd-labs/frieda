@@ -1,4 +1,5 @@
 @import "./variables";
+@import "fr-scss/src/variables";
 
 .fr-button {
     background-color: hotpink;
@@ -13,7 +14,7 @@
 }
 
 .fr-button--secondary {
-    background-color: teal;
+    background-color: greenyellow;
 }
 
 @media only screen and (min-width: 1024px) {
