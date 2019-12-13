@@ -1,0 +1,10 @@
+/node_modules
+/packages/*/node_modules
+/packages/*/dist/
+
+*.log
+.tmp
+.idea
+.DS_Store
+.rpt2_cache
+.vscode
