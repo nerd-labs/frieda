@@ -1,0 +1,23 @@
+@import "./variables";
+
+.fr-button {
+    background-color: hotpink;
+    color: white;
+    display: inline-block;
+    height: 100px;
+    width: $size;
+}
+
+.fr-button--full {
+    width: 100%;
+}
+
+.fr-button--secondary {
+    background-color: teal;
+}
+
+@media only screen and (min-width: 1024px) {
+    .fr-button {
+        height: 150px;
+    }
+}
