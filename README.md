@@ -9,5 +9,6 @@
 - [ ] Angular
 - [ ] Watch build
 - [ ] Stencil
+- [ ] Commitizen
 - [ ] Changelogs + releases
 - [ ] Build logging + errors?
