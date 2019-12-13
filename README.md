@@ -6,8 +6,8 @@
 - [x] Monorepo
 - [x] Lerna
 - [X] SCSS
-- [ ] Angular
-- [ ] Watch build
+- [X] Angular
+- [X] Watch build
 - [ ] Stencil
 - [ ] Commitizen
 - [ ] Changelogs + releases
