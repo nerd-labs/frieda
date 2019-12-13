@@ -6,7 +6,7 @@
 - [x] Monorepo
 - [x] Lerna
 - [X] SCSS
-- [ ] Angular
+- [x] Angular
 - [ ] Watch build
 - [ ] Stencil
 - [ ] Changelogs + releases
