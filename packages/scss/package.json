@@ -8,6 +8,6 @@
     "prestart": "rm -rf dist && mkdir dist",
     "start": "node ../../build -t style -c scss"
   },
-  "author": "",
+  "author": "Nerdlabs",
 	"license": "ISC"
 }

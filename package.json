@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/nerd-labs/frieda.git"
   },
-  "author": "",
+  "author": "Nerdlabs",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nerd-labs/frieda/issues"
