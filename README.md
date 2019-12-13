@@ -3,11 +3,13 @@
 
 ## TODO
 
-- [x] Monorepo
-- [x] Lerna
+- [X] Monorepo
+- [X] Lerna
 - [X] SCSS
 - [X] Angular
 - [X] Watch build
+- [ ] Angular:build + copy to dist
+- [ ] Clean dist
 - [ ] Stencil
 - [ ] Commitizen
 - [ ] Changelogs + releases
