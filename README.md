@@ -1,5 +1,5 @@
-# frieda
-A stencil + lerna monorepo POC
+![Frieda](frieda.svg)
+
 
 ## TODO
 
