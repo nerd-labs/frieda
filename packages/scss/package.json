@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"prestart": "rm -rf dist && mkdir dist",
-		"start": "node ../../build -t style -c scss"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "rm -rf dist && mkdir dist",
+    "start": "node ../../build -t style -c scss"
   },
   "author": "",
 	"license": "ISC"
