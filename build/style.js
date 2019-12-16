@@ -9,62 +9,64 @@ const cssnano = require('cssnano');
 const reporter = require('postcss-reporter');
 const autoprefixer = require('autoprefixer');
 
+const createDist = require('./create-dist');
+
 async function lint(component) {
-	const absPath = path.resolve(__dirname,  `../packages/${component}/src/${component}.scss`);
-	const absConfigPath = path.resolve(__dirname,  `../.stylelintrc`);
+    const absPath = path.resolve(__dirname,  `../packages/${component}/src/${component}.scss`);
+    const absConfigPath = path.resolve(__dirname,  `../.stylelintrc`);
 
-	const result = await stylelint.lint({
-		configFile: absConfigPath,
-		files: absPath,
-		formatter: 'string'
-	});
+    const result = await stylelint.lint({
+        configFile: absConfigPath,
+        files: absPath,
+        formatter: 'string'
+    });
 
-	if (result.output) throw new Error(result.output);
+    if (result.output) throw new Error(result.output);
 
-	return result;
+    return result;
 }
 
 async function sass(component) {
-	const absPath = path.resolve(__dirname,  `../packages/${component}/src/${component}.scss`);
-	const absDistPath = path.resolve(__dirname,  `../packages/${component}/dist/${component}.css`);
-	const absNMPath = path.resolve(__dirname,  `../packages/${component}/node_modules`);
+    const absPath = path.resolve(__dirname,  `../packages/${component}/src/${component}.scss`);
+    const absDistPath = path.resolve(__dirname,  `../packages/${component}/dist/${component}.css`);
+    const absNMPath = path.resolve(__dirname,  `../packages/${component}/node_modules`);
 
-	const cssResult = await new Promise((resolve, reject) => {
-		_sass.render({
-			file: absPath,
-			outFile: absDistPath,
-			includePaths: [absNMPath]
-		}, (error, result) => {
-			if (error) {
-				throw new Error(error.formatted);
-			}
+    const cssResult = await new Promise((resolve) => {
+        _sass.render({
+            file: absPath,
+            outFile: absDistPath,
+            includePaths: [absNMPath]
+        }, (error, result) => {
+            if (error) {
+                throw new Error(error.formatted);
+            }
 
-			return resolve(result.css);
-		});
-	})
+            return resolve(result.css);
+        });
+    })
 
-	const postCssResult = await postCss([
-		autoprefixer,
-		mqPacker({
-			sort: true
-		}),
-		cssnano({
-			preset: 'default',
-			calc: false,
-			discardUnused: false,
-			reduceIdents: false,
-			zindex: false
-		}),
-		reporter()
-	])
-	.process(cssResult, {
-		from: absDistPath,
-		map: {
-			inline: false
-		},
-	});
+    const postCssResult = await postCss([
+        autoprefixer,
+        mqPacker({
+            sort: true
+        }),
+        cssnano({
+            preset: 'default',
+            calc: false,
+            discardUnused: false,
+            reduceIdents: false,
+            zindex: false
+        }),
+        reporter()
+    ])
+    .process(cssResult, {
+        from: absDistPath,
+        map: {
+            inline: false
+        },
+    });
 
-	return writeResultAsync(absDistPath, postCssResult);
+    return writeResultAsync(absDistPath, postCssResult);
 }
 
 function writeResultAsync(cssFilePath, result) {
@@ -74,10 +76,11 @@ function writeResultAsync(cssFilePath, result) {
 }
 
 function init(component) {
-	return Promise.all([
-		lint(component),
-		sass(component)
-	]);
+    return Promise.all([
+        createDist(component),
+        lint(component),
+        sass(component)
+    ]);
 }
 
 module.exports = init;
