@@ -12,7 +12,7 @@ const autoprefixer = require('autoprefixer');
 const createDist = require('./create-dist');
 
 async function lint(component) {
-    const absPath = path.resolve(__dirname,  `../packages/${component}/src/${component}.scss`);
+    const absPath = path.resolve(__dirname,  `../packages/${component}/src`);
     const absConfigPath = path.resolve(__dirname,  `../.stylelintrc`);
 
     const result = await stylelint.lint({

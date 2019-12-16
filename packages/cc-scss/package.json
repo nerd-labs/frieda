@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ../../build -t style -c cc-scss"
+    "start": "node ../../build -t scss -c cc-scss"
   },
   "author": "Nerdlabs",
 	"license": "ISC"

@@ -2,18 +2,18 @@
 
     const angular = require('./angular');
     const clean = require('./clean');
-    const style = require('./style');
+    const scss = require('./scss');
 
     const taskList = {
         angular,
-        style
+        scss
     };
 
     const argv = require('yargs')
         .option('tasks', {
             alias: 't',
             type: 'array',
-            description: 'Which tasks need to run? [style / angular / stencil]'
+            description: 'Which tasks need to run? [scss / angular / stencil]'
         })
         .option('component', {
             alias: 'c',
