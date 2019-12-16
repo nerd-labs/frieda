@@ -12,7 +12,14 @@ const watch = require('./watch');
         .help()
         .argv;
 
-    console.log('WATCH', argv.watch);
+
+    /**
+     * Set the mode based on the watch flag.
+     * This can be used in underlying tasks to enable/disable certain features.
+     */
+    process.env.mode = argv.watch ? 'serve' : 'build';
+
+    console.log(`🏃‍♂️  Running in ${process.env.mode} mode\n`);
 
     await spawnAsPromise('lerna', 'bootstrap');
     await spawnAsPromise('lerna', 'run', 'start', '--stream');
