@@ -16,7 +16,7 @@ module.exports = async (component) => {
 
     /**
      * TODO: when upgrading to Angular 9, we need to specify the --prod flag on the ng build command
-     * -> spawnAsPromise('ng', 'build', component, process.env.mode === 'build' ? '--prod=true' : undefined),
+     * -> spawnAsPromise('ng', 'build', component, `--prod=${process.env.mode==='build'}`),
      */
     const promises = [
         spawnAsPromise('ng', 'lint', component),
