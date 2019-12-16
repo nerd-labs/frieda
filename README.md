@@ -9,8 +9,8 @@
 - [X] Angular
 - [X] Watch build
 - [ ] Angular:build + copy to dist
-- [ ] Clean dist
 - [ ] Stencil
 - [ ] Commitizen
 - [ ] Changelogs + releases
 - [ ] Build logging + errors?
+- [ ] Clean dist
