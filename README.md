@@ -8,8 +8,8 @@
 - [X] SCSS
 - [X] Angular
 - [X] Watch build
-- [ ] Angular:build + copy to dist
-- [ ] Clean dist
+- [X] Angular:build + copy to dist
+- [X] Clean dist
 - [ ] Commitizen
 - [ ] Changelogs + releases
 - [ ] Stencil
