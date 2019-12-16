@@ -49,6 +49,12 @@
             "styles": [
               "demo/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules",
+                "packages"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
