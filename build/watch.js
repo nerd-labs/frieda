@@ -6,9 +6,7 @@ const path = require('path');
 const { spawn } = require('child_process');
 
 function getDependencies(...args) {
-    const subprocess = spawn(args.shift(), args, {
-        shell: true,
-    });
+    const subprocess = spawn(args.shift(), args);
 
     return new Promise(resolve => {
         subprocess.stdout.on('data', (data) => {
