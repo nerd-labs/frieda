@@ -19,12 +19,6 @@
       "dom"
     ],
     "paths": {
-      "ng-button": [
-        "dist/ng-button"
-      ],
-      "ng-button/*": [
-        "dist/ng-button/*"
-      ],
       "cc-button": [
         "dist/cc-button"
       ],
