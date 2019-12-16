@@ -9,6 +9,8 @@ const cssnano = require('cssnano');
 const reporter = require('postcss-reporter');
 const autoprefixer = require('autoprefixer');
 
+const createDist = require('./create-dist');
+
 async function lint(component) {
 	const absPath = path.resolve(__dirname,  `../packages/${component}/src/${component}.scss`);
 	const absConfigPath = path.resolve(__dirname,  `../.stylelintrc`);
@@ -29,7 +31,7 @@ async function sass(component) {
 	const absDistPath = path.resolve(__dirname,  `../packages/${component}/dist/${component}.css`);
 	const absNMPath = path.resolve(__dirname,  `../packages/${component}/node_modules`);
 
-	const cssResult = await new Promise((resolve, reject) => {
+	const cssResult = await new Promise((resolve) => {
 		_sass.render({
 			file: absPath,
 			outFile: absDistPath,
@@ -75,6 +77,7 @@ function writeResultAsync(cssFilePath, result) {
 
 function init(component) {
 	return Promise.all([
+        createDist(component),
 		lint(component),
 		sass(component)
 	]);

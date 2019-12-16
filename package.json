@@ -3,9 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "start:demo": "ng serve --open",
-    "prestart": "lerna bootstrap",
-    "start": "lerna run start --stream",
-    "poststart": "node ./build/watch.js"
+    "build": "node ./build/build",
+    "start": "npm run build -- --watch"
   },
   "private": true,
   "dependencies": {
