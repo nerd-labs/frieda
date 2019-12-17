@@ -1,4 +1,4 @@
-![Frieda](frieda.svg)
+![Frieda](./assets/frieda.svg)
 
 ## About
 
