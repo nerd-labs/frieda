@@ -13,7 +13,7 @@
         .option('tasks', {
             alias: 't',
             type: 'array',
-            description: 'Which tasks need to run? [scss / angular / stencil]'
+            description: `Which tasks need to run? [${Object.keys(taskList).join(' / ')}]`
         })
         .option('component', {
             alias: 'c',
